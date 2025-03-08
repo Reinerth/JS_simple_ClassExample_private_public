@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Class Example</title>
+        <meta name="title" content="JS Class-Example with private and public functions">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="pragma" content="no-cache" />
+    </head>
+
+    <body>
+
+
+        Learning JavaScript might be hard, but easier,<br>
+        than try to explain the lemmings, they cant stop the flood with love ♥.
+
+
+        <script>
+
+
+            /**
+            * The Class (in all programming languages)
+            * 
+            * JavaScript has the greatest options for all ways of programming. 
+            * Lazy, procedural, with different syntax-rules and frameworks, quick and dirty 
+            * or modular, clean and proffesional for high-end-applications.
+            * 
+            * With ECMA Script 5 (Version 5) it has reached its maximum of needed possibilities, 
+            * and best readable syntax (grammar-rules). 
+            * "let" vs. "var" is an exception. "let" is an inmprovement. 
+            * "let" has a more strict and logic scope than "var".
+            * 
+            * All other new and different JS-"styles", are bad syntax-ideas. 
+            * Arrow-functions, fetch, backticks, promises and so on, 
+            * are only to confuse newbies and are bad practice. 
+            * They are hard to read and have no advantages 
+            * to the classic, native approach of ES5.
+            * 
+            * A Class does not needs to be created 
+            * with a Syntax-given rule from the programming language itself. 
+            * Means something like "new Class". The word "class" 
+            * has not necessarily to be there, for letting a structure to be a class. 
+            * We even could name a class "thisIsNotAClass", 
+            * but that doesnt change a thing about the true structure.
+            * 
+            * The Definition of a Class: 
+            * Group of objects, functions and variables, usually commonly used (intersection).
+            * 
+            * Definition of an Object: 
+            * Group of properties and their values (like JSON).
+            * 
+            * Thus, a so-called "CSS-class" is not a class, but an object, 
+            * because it is a group of properties. 
+            * CSS-functions like "calc" are only the substitute 
+            * for the "to-be-generated"-values of their properties.
+            */
+
+
+
+
+            /**
+             * Author: Arthur Reinerth, 20250307, Duesseldorf 
+             * 
+             * For a clean modular structure with many classes, 
+             * the classes should be integrated in a "namespace".
+             * For having all classes in one container and avoiding "namespace-pollution".
+             * You can find here an example: 
+             * https://github.com/Reinerth/JS_modulePattern_ClassExample_private_public
+             */
+
+
+
+
+            "use strict"; /* Used traditional syntax and ES5, except "let". */
+
+
+            // A list of items to be used in our Class.
+            let wegetable = [
+                {"name":"Aubergine",    "color":"violet"},
+                {"name":"Beans",        "color":"green" },
+                {"name":"Broccoli",     "color":"green" },
+                {"name":"Champignons",  "color":"white" },
+                {"name":"Cucumber",     "color":"green" },
+                {"name":"Onion",        "color":"white" },
+                {"name":"Potatoes",     "color":"beige" },
+                {"name":"Pepper",       "color":"red"   },
+                {"name":"Peas",         "color":"green" },
+                {"name":"Tomato",       "color":"red"   }
+            ];
+
+
+            /** myFirstClass ********************************************************
+             * Constructing a class "myFirstClass" with private and public functions.
+             * The public functions can be accessed from outside of the class,
+             * and the privat functions only from inside the class.
+             */
+            let myFirstClass = function (){
+
+                let randomNumber = parseInt(Math.random()*10); // generate a random number 0-9
+
+                // Private (can only be accessed from this class)
+                let getVeggyName = function(){
+                    return wegetable[randomNumber].name;
+                };
+
+                // Private (can only be accessed from this class)
+                let getVeggyColor = function(){
+                    return wegetable[randomNumber].color;
+                };
+
+
+
+                // Public (can be accessed from outside and other classes)
+                this.init = function(){
+
+                    let myVeggy = getVeggyName() + " ["+ getVeggyColor() +"]";
+
+                    alert(myVeggy); // output
+
+                    return myVeggy;
+                };
+            };
+
+            // Variable "first", is initialized with an instantiation (new) of the class "myFirstClass"
+            let first = new myFirstClass();
+
+
+
+
+
+            // Starting the application
+            first.init();
+
+
+
+
+        </script>
+    </body>
+</html>
