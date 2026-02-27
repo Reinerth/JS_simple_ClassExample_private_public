@@ -1,4 +1,4 @@
-# JS_simple_ClassExample_private_public
+# JS_simple_ClassExample_private_public 
 The way I understand a class and would recommend to write a class in JavaScript for best readability and use.
 
 <b>My definition of a Class:</b> Group of objects, functions and variables, usually commonly used (intersection).
